@@ -1,0 +1,13 @@
+version: '3'
+services:
+  github-runner:
+    container_name: github-runner-organisasi
+    build: .
+    environment:
+      - RUNNER_NAME=github-runner-organisasi
+      - ORG_URL=
+      - TOKEN=
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./runner-workdir:/tmp/github-runner
+    restart: always
